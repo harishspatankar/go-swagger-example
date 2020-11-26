@@ -14,9 +14,9 @@ type Book struct {
 }
 
 var books = []Book{
-	Book{ID: "1", Name: "Ikigai", Price: 100.00},
-	Book{ID: "2", Name: "Panchatantra", Price: 200.00},
-	Book{ID: "3", Name: "Raja Ram", Price: 400.00},
+	{ID: "1", Name: "Ikigai", Price: 100.00},
+	{ID: "2", Name: "Panchatantra", Price: 200.00},
+	{ID: "3", Name: "Raja Ram", Price: 400.00},
 }
 
 func main() {
@@ -51,7 +51,7 @@ func main() {
 	http.ListenAndServe(":8000", router)
 }
 
-// swagger:operation POST /books books books-create
+// swagger:operation POST /books books CreateBook
 // ---
 // summary: Creates new book.
 // description: Method creates new book.
@@ -75,7 +75,7 @@ func CreateBook(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "CreateBook")
 }
 
-// swagger:operation GET /books books books-index
+// swagger:operation GET /books books GetBook
 // ---
 // summary: Returns list of all books.
 // description: Method returns list all books.
@@ -86,7 +86,7 @@ func GetBook(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "GetBook")
 }
 
-// swagger:operation GET /books/{id} books books-show
+// swagger:operation GET /books/{id} books GetBookById
 // ---
 // summary: Returns specific book according to param id.
 // description: Method returns specific book according to param id.
@@ -103,7 +103,7 @@ func GetBookById(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "GetBookById")
 }
 
-// swagger:operation PUT /books/{id} books books-update
+// swagger:operation PUT /books/{id} books UpdateBook
 // ---
 // summary: Updates specific book according to param id.
 // description: Method Updates specific book according to param id.
@@ -120,7 +120,7 @@ func UpdateBook(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "UpdateBook")
 }
 
-// swagger:operation DELETE /books/{id} books books-delete
+// swagger:operation DELETE /books/{id} books DeleteBook
 // ---
 // summary: Deletes specific book according to param id.
 // description: Method deletes specific book according to param id.

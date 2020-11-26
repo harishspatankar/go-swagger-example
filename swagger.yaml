@@ -2,7 +2,7 @@ paths:
   /books:
     get:
       description: Method returns list all books.
-      operationId: books-index
+      operationId: GetBook
       responses:
         "200":
           description: OK
@@ -11,7 +11,7 @@ paths:
       - books
     post:
       description: Method creates new book.
-      operationId: books-create
+      operationId: CreateBook
       responses:
         "200":
           description: OK
@@ -21,7 +21,7 @@ paths:
   /books/{id}:
     delete:
       description: Method deletes specific book according to param id.
-      operationId: books-delete
+      operationId: DeleteBook
       parameters:
       - description: id of book
         in: path
@@ -36,7 +36,7 @@ paths:
       - books
     get:
       description: Method returns specific book according to param id.
-      operationId: books-show
+      operationId: GetBookById
       parameters:
       - description: id of book
         in: path
@@ -51,7 +51,7 @@ paths:
       - books
     put:
       description: Method Updates specific book according to param id.
-      operationId: books-update
+      operationId: UpdateBook
       parameters:
       - description: id of book
         in: path
