@@ -1,0 +1,67 @@
+paths:
+  /books:
+    get:
+      description: Method returns list all books.
+      operationId: books-index
+      responses:
+        "200":
+          description: OK
+      summary: Returns list of all books.
+      tags:
+      - books
+    post:
+      description: Method creates new book.
+      operationId: books-create
+      responses:
+        "200":
+          description: OK
+      summary: Creates new book.
+      tags:
+      - books
+  /books/{id}:
+    delete:
+      description: Method deletes specific book according to param id.
+      operationId: books-delete
+      parameters:
+      - description: id of book
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+      summary: Deletes specific book according to param id.
+      tags:
+      - books
+    get:
+      description: Method returns specific book according to param id.
+      operationId: books-show
+      parameters:
+      - description: id of book
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+      summary: Returns specific book according to param id.
+      tags:
+      - books
+    put:
+      description: Method Updates specific book according to param id.
+      operationId: books-update
+      parameters:
+      - description: id of book
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+      summary: Updates specific book according to param id.
+      tags:
+      - books
+swagger: "2.0"
